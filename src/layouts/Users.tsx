@@ -1,9 +1,7 @@
+import { useAuth } from '../hooks/UseAuth';
+
 export const UsersLayout = () => {
-  return (
-    <div>
-      <nav className='p-4 bg-primary-dark'>
-        <h1 className='text-2xl'>Users</h1>
-      </nav>
-    </div>
-  );
+  const { user } = useAuth();
+
+  return <div className='min-h-screen flex items-stretch'>hello {user?.name || 'N/A'}</div>;
 };

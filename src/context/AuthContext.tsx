@@ -2,7 +2,8 @@ import { createContext } from 'react';
 
 type AuthContextType = {
   role: UserRole;
-  login: (newRole: UserRole) => void;
+  user?: { id: number; name: string; role: UserRole };
+  login: (user: { id: number; name: string; role: UserRole }) => void;
 };
 
 export type UserRole = 'admin' | 'user';

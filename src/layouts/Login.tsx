@@ -24,8 +24,8 @@ export const LoginLayout = () => {
 
   const onSubmit = (data: LoginForm) => {
     const role = data.username.includes('admin') ? 'admin' : 'user';
-    login(role);
-    navigate(role === 'admin' ? '/admin' : '/users');
+    login({id: +Date.now(), name:data.username, role});
+    navigate('/users');
   };
 
   return (
